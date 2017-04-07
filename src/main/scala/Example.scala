@@ -30,7 +30,7 @@ object Example {
       (circle(100) fillColor Color.red.spin(15.degrees))) above
     (rectangle(500,50) fillColor Color.blue)
   def main(args:Array[String])={
-    manyShapes.draw
+        manyShapes.draw
     //lineOfTriangles(20).draw
   }
 }
