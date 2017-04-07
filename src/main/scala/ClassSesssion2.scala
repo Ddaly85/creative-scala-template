@@ -40,24 +40,27 @@ object ArcheryExample {
   }
 }
 
+//Decide to test this with just passing through a house width
 object streetExample {
+  val houseWidth = 100
+
   val houseRoof =
-    triangle(40, 30) fillColor Color.brown.spin(30.degrees)
+    triangle(houseWidth, houseWidth*0.75) fillColor Color.brown.spin(30.degrees)
   val homeStructure =
-    rectangle(40,20) fillColor(Color.red) lineColor(Color.red) above (
-    rectangle(4, 25) fillColor (Color.black) on
-      rectangle(40, 25) fillColor (Color.red) lineColor(Color.red))
+    rectangle(houseWidth,houseWidth / 2) fillColor(Color.red) lineColor(Color.red) above (
+    rectangle(houseWidth/10, houseWidth*0.6) fillColor (Color.black) on
+      rectangle(houseWidth, houseWidth*0.6) fillColor (Color.red) lineColor(Color.red))
 
   val homeTotal = houseRoof above homeStructure
 
   val treeOnStreet =
-    circle(25) fillColor (Color.green) above
-      rectangle(4, 25) fillColor (Color.brown)
+    circle(houseWidth * 0.6) fillColor (Color.green) above
+      rectangle(houseWidth/10, houseWidth * 0.6) fillColor (Color.brown)
 
   val streetSegment =
-    (rectangle(25,5) fillColor(Color.yellow) beside
-    rectangle(25,5) fillColor(Color.black)) above
-      rectangle(50,10) fillColor(Color.black) lineColor(Color.black)
+    (rectangle(houseWidth*0.6,houseWidth/10) fillColor(Color.yellow) beside
+    rectangle(houseWidth*0.6,houseWidth/10) fillColor(Color.black)) above
+      rectangle(houseWidth*1.2,houseWidth/4) fillColor(Color.black) lineColor(Color.black)
   val street =
     streetSegment beside streetSegment beside streetSegment
 
