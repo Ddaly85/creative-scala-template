@@ -5,6 +5,8 @@ import doodle.jvm.Java2DCanvas._
 import doodle.backend.StandardInterpreter._
 
 
+//Got through all of chapter 4 and 5
+
 /*
 Top-Level
 1) Yes must name objects
@@ -27,7 +29,8 @@ object ArcheryExample {
       (circle(50) fillColor Color.white) on
       (circle(75) fillColor Color.red)
   val archeryStand =
-    rectangle(10, 40) fillColor Color.white lineWidth (10) lineColor (Color.black)
+    rectangle(10, 40) fillColor Color.white lineWidth (10) lineColor (Color.black) above
+      rectangle(100,40) fillColor(Color.brown)
   val grassyField =
     rectangle(200, 30) fillColor(Color.green)
   val fullPicture = archeryTarget above (archeryStand above (grassyField))
