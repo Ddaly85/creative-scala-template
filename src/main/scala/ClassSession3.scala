@@ -131,11 +131,11 @@ object sierpinskiTriangle {
 
   val triangleImg = Image.triangle(10,10).lineColor(Color.violet)
 
-  val triangleUnit = triangleImg above (triangleImg beside triangleImg)
+  //val triangleUnit = triangleImg above (triangleImg beside triangleImg)
 
   def triangleCombined(count: Int): Image = {
     count match {
-      case 0 => triangleUnit
+      case 0 => triangleImg
       case n =>
         val finalImg = triangleCombined(n - 1)
         finalImg above (finalImg beside finalImg)
@@ -143,7 +143,7 @@ object sierpinskiTriangle {
   }
 
   def main(args: Array[String]) = {
-    triangleCombined(4).draw
+    triangleCombined(6).draw
   }
 }
 
