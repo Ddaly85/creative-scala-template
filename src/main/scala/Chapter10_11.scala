@@ -131,21 +131,26 @@ object lSystemExample {
   }
 }
 
-//Didn't get through this one, will have to do this and ch 11 at another time
 object flatPolygon {
 
   def polygon(sides: Int, sideLength: Double): Image = {
     val rotate = Angle.one / sides
-    def inst(count: Int): List[Instruction] = {
-      count match {
-        case 0 => Nil
-        case n => turn(rotate) :: forward(sideLength) :: inst(n-1)
-      }
-    }
-    Turtle.draw(inst(sides))
+    Turtle.draw((1 to sides).toList.flatMap(x => List(turn(rotate),forward(sideLength))))
   }
 
   def main(args: Array[String]) = {
     polygon(10,50).draw
+  }
+}
+
+object flatSpiralSquare {
+
+  def spiralSquare(Iterations: Int, sideLength: Double, angleRot: Angle, numChg: Double): Image = {
+    Turtle.draw((1 to Iterations).toList.flatMap(x => List(forward(sideLength + (numChg*x)),turn(angleRot))))
+  }
+
+
+  def main(args: Array[String]) = {
+    spiralSquare(50,20,80.degrees,0.5).draw
   }
 }
